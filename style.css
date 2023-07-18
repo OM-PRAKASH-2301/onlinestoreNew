@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+            background-image: url('img5.avif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .carousel-item {
+            height: 300px;
+        }
+
+        .carousel-image {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-caption {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        .row-content {
+            padding: 10px;
+            text-shadow: #e22323;
+            background-position: 20%;
+            background-color: rgb(243, 8, 231);
+            border-radius: 40px;
+            color: #0e0f0f;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .signin-form {
+            background-color: whitesmoke;
+            margin-top: 30px;
+            border-radius: 50px;
+            color: #070707;
+        }
+  
