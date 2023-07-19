@@ -1,7 +1,7 @@
 <?php include("dbinfo.php");
 // print_r($_POST);
 
-$id = $_REQUEST["id"] ;
+$id = $_REQUEST["id"];
 
 $selectQuery = "SELECT * FROM seller_items WHERE id = '$id'";
 

@@ -17,6 +17,9 @@ $numrow = mysqli_num_rows($result);
             text-align: center;
             margin-right: 80px;
         }
+
+
+
         .profile-pic img {
             width: 120px;
             height: 120px;
@@ -33,10 +36,8 @@ $numrow = mysqli_num_rows($result);
                 <th>Item category</th>
                 <th>Item weight (in kg)</th>
                 <th>Item price</th>
-                <th>Seller Name</th>
                 <th>Item pic</th>
                 <th>Option</th>
-                
             </tr>
         </thead>
         <tbody>
@@ -44,23 +45,14 @@ $numrow = mysqli_num_rows($result);
                 // print_r($numrow);
                 // Array ( [id] => 2 [seller_id] => [product_name] => potato [product_category] => vegetable [item_weight] => kg [item_price] => 50 [item_pic] => [updated_date] => 2023-07-16 14:32:56 [created_date] => 2023-07-16 14:32:56 )
                 $id = $numrow["id"];
-                $seller_id = $numrow["seller_id"];
+                // $seller_id = $numrow["seller_id"];
                 $item_name = $numrow["product_name"];
                 $item_category = $numrow["product_category"];
                 $item_weight = $numrow["item_weight"];
                 $item_price = $numrow["item_price"];
                 $item_pic = $numrow["item_pic"];
         
-                $selectQuery = "SELECT * FROM seller_detail WHERE id = '$seller_id'";
-                $result2 = mysqli_query($con, $selectQuery);
-
-                $numrow2 = mysqli_fetch_assoc($result2);
-                // print_r($numrow2);
-                // Array ( [id] => 3 [name] => Pukesh [fathername] => punit [address] => Vill-mudpar post-uparwah [email] => pukesh@gmail.com [password] => 123456 [contactno] => 2147483647 [adharno] => 12345 [panno] => 12345 [photo] => img24.jpg [created_date] => 0000-00-00 00:00:00 [updated_date] => 2023-07-16 11:07:50 )
-
-                $seller_name = $numrow2["name"];
-
-
+                $selectQuery = "SELECT * FROM seller_"
             ?>
             <tr>
                 <td><?php echo $item_name; ?></td>
@@ -114,9 +106,7 @@ $numrow = mysqli_num_rows($result);
                 console.log(response['product_category'])
                 console.log(response['item_weight'])
                 console.log(response['item_price'])
-                console.log(response['seller_name'])
                 console.log(response['item_pic'])
-                
 
                 let data = `
             
@@ -145,10 +135,6 @@ $numrow = mysqli_num_rows($result);
                             <tr>
                                 <td>item price</td>
                                 <td>${response['item_price']}</td>
-                            </tr>
-                            <tr>
-                                <td>item price</td>
-                                <td>${response['seller_name']}</td>
                             </tr>
                             <tr>
                                 <td>item pic</td>
