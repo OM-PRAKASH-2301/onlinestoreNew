@@ -4,6 +4,10 @@ $id = $_SESSION["customer_id"];
 $username = $_SESSION["email"];
 $customer_name = $_SESSION["customer_name"];
 
+if(!isset($_SESSION["email"])){
+  header("location:signin.php");
+}
+
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -29,7 +33,10 @@ $customer_name = $_SESSION["customer_name"];
           <a class="nav-link" href="find_item.php">Find items</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="customer_order.php">Your orders</a>
+          <a class="nav-link" href="add_to_cart.php">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="my_orders.php">My orders</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="customer_change_password.php">Change password</a>

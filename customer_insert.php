@@ -1,7 +1,11 @@
-<?php include("navbar.php"); 
+<?php include("dbinfo.php");
+// include("navbar.php"); 
 
 // echo "<pre>";
-// print_r($_POST);
+// print_r($_POST); 
+// echo "<br>";
+// echo json_encode($_POST);
+// echo "<br>";
 // print_r($_FILES);
 
 if($_POST["username"] != ""){
@@ -100,7 +104,7 @@ $insertQuery = "INSERT INTO customer_detail (username, father_name, mother_name,
 $result = mysqli_query($con, $insertQuery);
 
 if($result){
-    echo "inserted successfully";
+    // echo "inserted successfully";
     header("location:index.php");
 }else{
     echo "something went wrong";

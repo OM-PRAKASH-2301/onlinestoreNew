@@ -29,18 +29,22 @@ $numrow = mysqli_num_rows($result);
     <table class="table table-bordered" style="text-align: center;">
         <thead>
             <tr>
+                <th>Sr no</th>
                 <th>Item name</th>
                 <th>Item category</th>
                 <th>Item weight (in kg)</th>
                 <th>Item price</th>
                 <th>Seller Name</th>
                 <th>Item pic</th>
-                <th>Option</th>
+                <th>viewmore</th>
+                <th>Action</th>
                 
             </tr>
         </thead>
         <tbody>
-            <?php while($numrow = mysqli_fetch_assoc($result)){
+            <?php
+            $i=0;
+            while($numrow = mysqli_fetch_assoc($result)){
                 // print_r($numrow);
                 // Array ( [id] => 2 [seller_id] => [product_name] => potato [product_category] => vegetable [item_weight] => kg [item_price] => 50 [item_pic] => [updated_date] => 2023-07-16 14:32:56 [created_date] => 2023-07-16 14:32:56 )
                 $id = $numrow["id"];
@@ -59,10 +63,12 @@ $numrow = mysqli_num_rows($result);
                 // Array ( [id] => 3 [name] => Pukesh [fathername] => punit [address] => Vill-mudpar post-uparwah [email] => pukesh@gmail.com [password] => 123456 [contactno] => 2147483647 [adharno] => 12345 [panno] => 12345 [photo] => img24.jpg [created_date] => 0000-00-00 00:00:00 [updated_date] => 2023-07-16 11:07:50 )
 
                 $seller_name = $numrow2["name"];
+                $i++;
 
 
             ?>
             <tr>
+                <td><?php echo $i; ?></td>
                 <td><?php echo $item_name; ?></td>
                 <td><?php echo $item_category; ?></td>
                 <td><?php echo $item_weight; ?></td>
@@ -76,11 +82,15 @@ $numrow = mysqli_num_rows($result);
                 <td><button onclick="viewmore('<?php echo $id?>')">
                     View more
                 </button></td>
+                <td><button onclick="addtocart('<?php echo $id?>')">
+                    Add to cart
+                </button></td>
             </tr>
             <?php } ?>
             
         </tbody>
     </table>
+    
 </div>
 
 
@@ -156,21 +166,44 @@ $numrow = mysqli_num_rows($result);
                             </tr>
                             
                         </tbody>
+                        
                     </table>
                 `;
+                
+                
                 document.querySelector(`#modal-data`).innerHTML = data;
-
-
                 document.getElementById("myModal").style.display = "block";
             }
         })
     }
+
+    //trying to ajax but some issues faces
+
+function addtocart(id){
+    $.ajax({
+        url: 'add_to_cart_insert.php',
+        type: 'post',
+        data:{
+            id : id
+        },
+        success :function(responseData){
+            console.log(responseData);
+            response = JSON.parse(responseData)
+            if(response.pageName != ''){
+                window.location = response.pageName
+            }
+        }
+    })
+    
+}
 
 
     function close_model(){
         // alert ("close moti");
         document.getElementById("myModal").style.display = "none";
     }
+
+
 </script>
 
 <!-- <table>

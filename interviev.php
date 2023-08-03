@@ -7,24 +7,25 @@ HTML stands for hypertext markup language\
 OOPS - Object oriented Programming Structure
 POPS - Procedurel oriented Programming structure 
 
-- class
-- Object 
+- class (class is a collection of object that share common properties and behaviour, using a class we can create many object of class)
+
+- Object (an object is indivitual instance of data structure defined by class)
 
 Properties of Object 
-- Abstraction
+- Abstraction - (abstract is using to not use the function outside of class, it is protected for outside class)
 - Inheritance 
         - Single Inheritance
         - multiple inheritance 
         - multilevel inheritance 
         - hybrid inheritance 
 - Data Binding 
-- Polymorphism
+- Polymorphism (through this we can use function in other classes but only behaviour of function will be changed)
 - Encapsulaion
 
 
 
 -- MethodOverloading and method Overrriding
--- DDL and DML 
+-- DDL (data defination language) and DML (data manupulation language)
 -- 
 -------------------------------------------------------------------------------------------
 Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects that interact with each other. Here are some key properties of Object-Oriented Programming:

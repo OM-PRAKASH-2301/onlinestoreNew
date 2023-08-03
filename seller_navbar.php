@@ -1,7 +1,12 @@
 <?php include("file.php"); 
 
-$id = $_SESSION["seller_id"];
-$seller_name = $_SESSION["seller_name"];
+
+$id = $_SESSION["id"];
+$seller_name = $_SESSION["name"];
+
+if(!isset($_SESSION["email"])){
+    header("location:signin.php");
+}
 
 
 ?>
