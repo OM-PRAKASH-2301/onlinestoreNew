@@ -4,6 +4,7 @@
 $customer_id = $_SESSION["customer_id"];
 // $id = $_REQUEST["email"];
 
+
 // echo $id;
 $selectQuary = "SELECT * FROM order_details WHERE customer_id = '$customer_id'";
 
